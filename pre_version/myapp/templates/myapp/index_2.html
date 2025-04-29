@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Presentation Editor</title>
+  <style>
+    /* 加载动画样式 */
+    #loading {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.9);
+      display: none; 
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+    }
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #9c27b0;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* 保存状态提示 */
+    #savingStatus {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      border-radius: 8px;
+      display: none;
+      z-index: 1000;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #8e44ad, #f39c12);
+    }
+
+    .main-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      padding: 24px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 24px;
+      border: 1px solid #e1bee7;
+      box-shadow: 0 4px 6px rgba(156, 39, 176, 0.2);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+    .thumbnail {
+      width: 100%;
+      height: auto;
+      max-width: 90%;
+      object-fit: contain;
+    }
+    .button {
+      background: linear-gradient(to right, #8e44ad, #f39c12);
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 0.875rem;
+    }
+    .button:hover {
+      background: linear-gradient(to right, #9b59b6, #f1c40f);
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 16px;
+    }
+    .thumbnail-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 16px;
+    }
+    .thumbnail-item {
+      padding: 8px;
+      border-radius: 12px;
+      transition: all 0.2s ease-in-out;
+    }
+    .thumbnail-item.selected {
+      background: white;
+      box-shadow: 0 4px 6px rgba(156, 39, 176, 0.5);
+      border: 2px solid #e1bee7;
+    }
+    .thumbnail-item:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .textarea {
+      min-height: 400px;
+      resize: none;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #e1bee7;
+      padding: 12px;
+      border-radius: 8px;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      margin-bottom: 50px;
+    }
+    .header-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 加载动画 -->
+  <div id="loading">
+    <div>
+      <div class="spinner"></div>
+      <p>Loading the presentation...</p>
+    </div>
+  </div>
+
+  <!-- 保存状态提示 -->
+  <div id="savingStatus">
+    Saving changes...
+  </div>
+
+  <main class="main-container">
+    <div>
+      <div class="card">
+        <img id="slideThumbnail" class="thumbnail" alt="Slide Thumbnail">
+      </div>
+
+      <div class="button-group">
+        <button class="button" id="prevSlide" disabled>Previous</button>
+        <span id="slideIndicator">Slide 1 of 3</span>
+        <button class="button" id="nextSlide">Next</button>
+      </div>
+
+      <div class="thumbnail-list" id="thumbnailList">
+        <!-- 动态添加缩略图 -->
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="position: relative;">
+        <div class="header-left">
+          <h2>Edit Script</h2>
+          <span id="charCount">0 chars</span>
+        </div>
+        <textarea id="scriptTextarea" class="textarea" placeholder="Enter your script for this slide..."></textarea>
+        <button class="button" id="generateVideoButton" style="position: absolute; bottom: 16px; right: 16px;">Generate Video</button>
+      </div>
+    </div>
+  </main>
+
+  {% load static %}
+  <script src="{% static 'myapp/presentationEditor.js' %}?v={{ timestamp }}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

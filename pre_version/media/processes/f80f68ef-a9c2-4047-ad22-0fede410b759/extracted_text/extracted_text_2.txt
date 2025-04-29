@@ -1,0 +1,3 @@
+{
+    "2": "Why Declarative Programming?Properties of declarative languagesSimple program semantics: “What You See Is What I Mean” (WYSIWIM)Higher program understandabilityand verifiabilityReferential transparencyCloser to mathematicsComputation by values, not by effectsEverything is deterministic\n4"
+}

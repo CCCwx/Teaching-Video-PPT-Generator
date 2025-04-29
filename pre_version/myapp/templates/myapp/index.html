@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Generator Suite</title>
+    <style>
+      /* 新增语音克隆样式 */
+      /* 新增语音克隆样式 */
+      .voice-clone-section {
+        margin: 1.5rem 0;
+        padding: 1rem;
+        background: #f8f8f8;
+        border-radius: 8px;
+      }
+      .recording-instruction {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+      }
+      .recording-text {
+        background: white;
+        padding: 1rem;
+        border-radius: 4px;
+        margin: 1rem 0;
+        border-left: 4px solid #9c27b0;
+        font-style: italic;
+      }
+      #cloneVoiceBtn {
+        width: 100%;
+        background: linear-gradient(to right, #4CAF50, #45a049);
+        margin-top: 0.5rem;
+      }
+      #cloneVoiceBtn.recording {
+        background: linear-gradient(to right, #f44336, #d32f2f);
+      }
+      .recording-indicator {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: #ff0000;
+        border-radius: 50%;
+        margin-right: 8px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .recording-indicator.active {
+        opacity: 1;
+        animation: pulse 1s infinite;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+      }
+    
+      /* 新增切换选项卡样式 */
+      .tab-switcher {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        padding: 0.5rem;
+      }
+      .tab-item {
+        flex: 1;
+        padding: 1rem 2rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: blueviolet;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: bold;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* 增加文字阴影 */
+        opacity: 0.9; /* 稍微提高透明度 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .tab-item:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .tab-item.active {
+        background: white;
+        border-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        color: #9c27b0;
+        background: linear-gradient(45deg, #ffffff, #f8f8f8);
+        transform: translateY(0);
+      }
+      .tab-item.active:hover {
+        transform: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+      .tab-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .tab-content.active {
+        display: block;
+        opacity: 1;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom right, #9c27b0, #e91e63, #f44336);
+      }
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        width: 100%;
+        max-width: 500px;
+        transition: box-shadow 0.3s ease;
+      }
+      .card:hover {
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        color: #666;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: bold;
+      }
+      .file-upload {
+        border: 2px dashed #ccc;
+        border-radius: 4px;
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .file-upload:hover {
+        background-color: #f0f0f0;
+      }
+      .file-upload-icon {
+        font-size: 3rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      input[type="file"] {
+        display: none;
+      }
+      .radio-group {
+        display: flex;
+        gap: 1rem;
+      }
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        background: linear-gradient(to right, #9c27b0, #e91e63);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #requirements {
+        width: 100%; /* 确保与上传区域同宽 */
+        box-sizing: border-box; /* 包括边框和内边距在宽度内 */
+        border: 2px solid #ccc; /* 实线边框替换虚线 */
+        border-radius: 4px;
+        padding: 1rem; /* 增加内边距提升可读性 */
+        cursor: text; /* 文本光标指针 */
+        transition: border-color 0.3s ease;
+        background-color: transparent; /* 去除背景颜色，以保持一致 */
+      }
+
+      /* 鼠标悬停或获得焦点时更改边框颜色 */
+      #requirements:hover,
+      #requirements:focus {
+        border-color: #9c27b0; /* 紫色边框突出效果 */
+        outline: none; /* 去掉默认轮廓线 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="tab-switcher">
+        <div class="tab-item active" data-tab="video">AI Video Generator</div>
+        <div class="tab-item" data-tab="ppt">AI PPT Generator</div>
+      </div>
+
+      <!-- Video Generator Tab -->
+      <div id="video-tab" class="tab-content active">
+        <h1>AI Teaching Video Generator</h1>
+        <p>
+          Upload PPT or PDF, choose script level and voice, generate AI teaching
+          videos
+        </p>
+        <form id="videoGeneratorForm">
+          <div class="form-group">
+            <label for="file-upload">Upload PPT or PDF File</label>
+            <div class="file-upload" id="file-upload-area">
+              <div class="file-upload-icon">📁</div>
+              <p>Click to upload or drag and drop</p>
+              <p><small>PPT or PDF (max 20MB)</small></p>
+            </div>
+            <input type="file" id="file-upload" accept=".ppt,.pptx,.pdf" />
+          </div>
+          <div class="form-group">
+            <label>Choose Script Level</label>
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="scriptLevel"
+                  value="Easy-to-Understand"
+                  checked
+                />
+                Easy-to-Understand
+              </label>
+              <label>
+                <input type="radio" name="scriptLevel" value="Standard" />
+                Standard
+              </label>
+              <label>
+                <input type="radio" name="scriptLevel" value="Professional" />
+                Professional
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Choose Script Length</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="scriptLength" value="400" checked />
+                400 words
+              </label>
+              <label>
+                <input type="radio" name="scriptLength" value="600" />
+                600 words
+              </label>
+              <label>
+                <input type="radio" name="scriptLength" value="800" />
+                800 words
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="voice-type">Select Voice Type</label>
+            <select id="voice-type">
+              <option value="">Choose a voice</option>
+              <option value="中文男">中文男</option>
+              <option value="中文女">中文女</option>
+              <option value="粤语男">粤语男</option>
+              <option value="粤语女">粤语女</option>
+              <option value="英文男">英文男</option>
+              <option value="英文女">英文女</option>
+            </select>
+          </div>
+          <!-- 修改后的语音克隆部分 -->
+          <div class="voice-clone-section">
+            <label>Clone Voice (Beta)</label>
+            <p class="recording-instruction">
+              Please read the following content slowly:
+            </p>
+            <div class="recording-text">
+              "My favorite hobby is reading books. It's like opening a door to different worlds. When I'm lost in a good story, time just flies by. Whether it's a thrilling mystery or a heartwarming romance, each book has its own charm."
+            </div>
+            <button type="button" id="cloneVoiceBtn">
+              <span class="recording-indicator"></span>
+              Start Recording
+            </button>
+          </div>
+
+
+
+
+
+          <button type="submit">Generate Scripts</button>
+        </form>
+      </div>
+
+      <!-- PPT Generator Tab -->
+      <div id="ppt-tab" class="tab-content">
+        <h1>AI PPT Generator</h1>
+        <p>Upload documents or input requirements to generate PPT</p>
+        <form id="pptGeneratorForm">
+          <div class="form-group">
+            <label for="ppt-file-upload">Upload Documents</label>
+            <div class="file-upload" id="ppt-file-upload-area">
+              <div class="file-upload-icon">📁</div>
+              <p>Click to upload or drag and drop</p>
+              <p><small>DOC/DOCX/PDF (max 20MB)</small></p>
+            </div>
+            <input type="file" id="ppt-file-upload" accept=".doc,.docx,.pdf" />
+          </div>
+
+          <div class="form-group">
+            <label for="theme">Choose Theme</label>
+            <select id="theme">
+              <option value="202407176CA9161">Cartoon</option>
+              <option value="202407171E27C9D">Business</option>
+              <!-- 修正value -->
+              <option value="20240718489569D">Creative</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ppt-language">Choose Language</label>
+            <select id="ppt-language">
+              <option value="cn">中文</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="requirements">Special Requirements</label>
+            <textarea
+              id="requirements"
+              rows="3"
+              placeholder="Enter your custom requirements..."
+              class="file-upload"
+              style="resize: vertical"
+            ></textarea>
+          </div>
+
+          <button type="submit">Generate PPT</button>
+        </form>
+      </div>
+    </div>
+    {% load static %}
+    <script src="{% static 'myapp/script.js' %}?v={{ timestamp }}"></script>
+  </body>
+</html>

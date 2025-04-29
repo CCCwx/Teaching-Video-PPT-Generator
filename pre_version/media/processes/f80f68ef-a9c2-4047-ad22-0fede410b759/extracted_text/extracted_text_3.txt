@@ -1,0 +1,3 @@
+{
+    "3": "Why Declarative Programming?From a software engineering point of viewCorrectness is extremely importantThe dynamic and interactive environment makes it easy to experiment and change a program while it is being developedRapid prototypingand exploratoryprogrammingfor problems that are so complex that no clear solution is available at the start of investigation\n5"
+}

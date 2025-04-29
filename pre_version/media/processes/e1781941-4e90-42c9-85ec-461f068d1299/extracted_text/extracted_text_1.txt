@@ -1,0 +1,3 @@
+{
+    "1": "Why Declarative Programming?Properties of imperative (conventional) languagesState-oriented: each statement execution changes the abstract machine stateDestructive assignment as a fundamental operationE.g., x = x + 1Side effects can happenE.g., modifying a non-local variableDifficult to read, write, and verify programs\n3 "
+}
