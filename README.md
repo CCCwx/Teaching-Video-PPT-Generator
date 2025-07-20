@@ -43,4 +43,25 @@ snapshot_download('iic/CosyVoice-300M-SFT',     local_dir='pretrained_models/Cos
 snapshot_download('iic/CosyVoice-300M-Instruct',local_dir='pretrained_models/CosyVoice-300M-Instruct')
 snapshot_download('iic/CosyVoice-ttsfrd',       local_dir='pretrained_models/CosyVoice-ttsfrd')
 ```   
-   
+### Git Clone Manully
+Ensure that Git LFS is installed and run it: <br>
+```bash
+mkdir -p pretrained_models
+git lfs install               # Only need excute once
+
+git clone https://www.modelscope.cn/iic/CosyVoice2-0.5B.git        pretrained_models/CosyVoice2-0.5B
+git clone https://www.modelscope.cn/iic/CosyVoice-300M.git         pretrained_models/CosyVoice-300M
+git clone https://www.modelscope.cn/iic/CosyVoice-300M-SFT.git     pretrained_models/CosyVoice-300M-SFT
+git clone https://www.modelscope.cn/iic/CosyVoice-300M-Instruct.git pretrained_models/CosyVoice-300M-Instruct
+git clone https://www.modelscope.cn/iic/CosyVoice-ttsfrd.git        pretrained_models/CosyVoice-ttsfrd
+```
+
+### Optional: ttsfrd Text Normalization Enhancement
+For more accurate text normalization (numbers, symbols, dates, etc.), install the ttsfrd package:  <br>
+```bash
+cd pretrained_models/CosyVoice-ttsfrd/
+unzip -o resource.zip -d .
+
+pip install ttsfrd_dependency-0.1-py3-none-any.whl
+pip install ttsfrd-0.4.2-cp310-cp310-linux_x86_64.whl
+```
