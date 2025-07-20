@@ -85,3 +85,5 @@ python manage.py runserver 8080
 # Allow LAN access 
 python manage.py runserver 0.0.0.0:8000
 ```
+
+By following those step, our project should be deployed correctly on you devices and by clikcing the localhost, it will redirect to the generating teaching video & PPT pages.
