@@ -9,5 +9,11 @@ This back-end application is developed based on Django Framework while we used J
 2. Alibaba CosyVoice API: Used for generate the voice in the video (Clone Voice avalable)
 3. IFLY-Teck API: Used for generate the PowerPoints
 ## Environment Setup
-1. This project support Python3.7 and above, please refer to https://www.python.org/ for further python installation
-2. Please install third-party python package：
+This project support Python3.7 and above, please refer to https://www.python.org/ for further python environment installation. After installing the python, you have to do the following setup below:
+### Third-party packages needed
+Type the below command line into your terminal for Third-party packages installation:
+<mark> pip install django==5.0.3 PyPDF2==3.0.1 python-pptx==0.6.23 gtts==2.4.0 pdf2image==1.17.0 moviepy==1.0.3 </mark>
+d
+
+   
+   
