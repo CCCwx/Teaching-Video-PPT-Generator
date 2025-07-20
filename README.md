@@ -5,19 +5,19 @@ This project was developed by the Undergraduate in Chinese University of Hong Ko
 
 ## Project Screenshot
 ### Video Generation Part
-<div align="center">
-  <img width="500" height="400" alt="Overall Layout" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
-</div>
 
+ <div align="center">
+ <img width="400" height="600" alt="Overall Layout" src="https://github.com/user-attachments/assets/84a87a21-9d69-4919-aaf1-da4cb94d735c" />
+</div>
 
 ###  Script Modification Part
 <div align="center">
-  <img width="500" height="400" alt="Script Modification Part" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
+  <img width="500" height="400" alt="Script Modification Part" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891"/>
 </div>
 
 ### PowerPoint Generation Part
 <div align="center">
- <img width="758" height="891" alt="PPT Generation Part" src="https://github.com/user-attachments/assets/83eaa4a0-75ff-4455-8fa2-5b10836ddd98" />
+ <img width="400" height="600" alt="PPT Generation Part" src="https://github.com/user-attachments/assets/83eaa4a0-75ff-4455-8fa2-5b10836ddd98" />
 </div>
 
 ## Technology stacks and APIs
