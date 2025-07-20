@@ -5,10 +5,10 @@ This project was developed by the Undergraduate in Chinese University of Hong Ko
 
 ## Project Screenshot
 ### Video Generation Part
-<img width="500" height="400" alt="Overall Layout" src="https://github.com/user-attachments/assets/ebabc261-0a04-4580-a192-8fa227ad2c72" />
-
-<img width="699" height="504" alt="Voice Selection Part" src="https://github.com/user-attachments/assets/ed4991bb-af46-4493-b3fd-d5871361d83f" />
-### PowerPoint Generation Part
+<div align="center">
+  <img width="500" height="400" alt="Overall Layout" src="your-image-url-or-path" />
+  <br>
+</div>
 
 ###  Script Modification Part
 <img width="1920" height="901" alt="Script Modification Part" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
