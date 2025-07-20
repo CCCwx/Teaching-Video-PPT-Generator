@@ -103,6 +103,10 @@ python manage.py runserver 8080
 # Allow LAN access 
 python manage.py runserver 0.0.0.0:8000
 ```
+### API KEY Initilization
+1. For the OpenAI API, the users need to replace the API_KEY and ENDPOINT in the 'generate_script' function in pre_version/myapp/utils.py.
+2. For the IFLY-TECH API, the users need to replace the APP_ID and API_SECRET in the 'generate_ppt' views in pre_version/myapp/views.py.
+
 
 By following those step, our project should be deployed correctly on you devices and by clikcing the localhost, it will redirect to the generating teaching video & PPT pages as seen in the Project Screenshot part.
 
