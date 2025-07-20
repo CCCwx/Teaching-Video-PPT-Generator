@@ -12,7 +12,9 @@ This back-end application is developed based on Django Framework while we used J
 This project support Python3.7 and above, please refer to https://www.python.org/ for further python environment installation. After installing the python, you have to do the following setup below:
 ### Third-party packages needed
 Type the below command line into your terminal for Third-party packages installation: <br>
+```bash
 <mark> pip install django==5.0.3 PyPDF2==3.0.1 python-pptx==0.6.23 gtts==2.4.0 pdf2image==1.17.0 moviepy==1.0.3 </mark>
+```
 ### System level dependencies
 | 依赖项     | macOS Installation Method                | Windows Installation Method                                     | Verification Command              |
 |------------|-----------------------------------|---------------------------------------------------------------------------------|-----------------------|
@@ -31,6 +33,14 @@ We strongly recommend downloading the following pretrained models and resources:
 ### SDK one-click download (recommended)
 ```bash
 pip install modelscope
+```
 
+from modelscope import snapshot_download
+
+snapshot_download('iic/CosyVoice2-0.5B',        local_dir='pretrained_models/CosyVoice2-0.5B')
+snapshot_download('iic/CosyVoice-300M',         local_dir='pretrained_models/CosyVoice-300M')
+snapshot_download('iic/CosyVoice-300M-SFT',     local_dir='pretrained_models/CosyVoice-300M-SFT')
+snapshot_download('iic/CosyVoice-300M-Instruct',local_dir='pretrained_models/CosyVoice-300M-Instruct')
+snapshot_download('iic/CosyVoice-ttsfrd',       local_dir='pretrained_models/CosyVoice-ttsfrd')
    
    
