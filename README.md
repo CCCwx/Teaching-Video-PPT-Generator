@@ -7,16 +7,18 @@ This project was developed by the Undergraduate in Chinese University of Hong Ko
 ### Video Generation Part
 <div align="center">
   <img width="500" height="400" alt="Overall Layout" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
-  <br>
 </div>
-<img width="1054" height="947" alt="Overall Layout" src="" />
+
 
 ###  Script Modification Part
-<img width="1920" height="901" alt="Script Modification Part" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
-
+<div align="center">
+  <img width="500" height="400" alt="Script Modification Part" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
+</div>
 
 ### PowerPoint Generation Part
-<img width="758" height="891" alt="PPT Generation Part" src="https://github.com/user-attachments/assets/83eaa4a0-75ff-4455-8fa2-5b10836ddd98" />
+<div align="center">
+ <img width="758" height="891" alt="PPT Generation Part" src="https://github.com/user-attachments/assets/83eaa4a0-75ff-4455-8fa2-5b10836ddd98" />
+</div>
 
 ## Technology stacks and APIs
 This back-end application is developed based on Django Framework while we used JavaScript and Html to realized the front-end
