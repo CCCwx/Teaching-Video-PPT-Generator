@@ -34,7 +34,7 @@ Type the below command line into your terminal for Third-party packages installa
 pip install django==5.0.3 PyPDF2==3.0.1 python-pptx==0.6.23 gtts==2.4.0 pdf2image==1.17.0 moviepy==1.0.3 
 ```
 ### System level dependencies
-| 依赖项     | macOS Installation Method                | Windows Installation Method                                     | Verification Command              |
+| Dependencies     | macOS Installation Method                | Windows Installation Method                                     | Verification Command              |
 |------------|-----------------------------------|---------------------------------------------------------------------------------|-----------------------|
 | **Poppler** | `brew install poppler`            | 1. Download [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)<br>2. Add the `bin` directory to the system PATH.| `pdftoppm -v`         |
 | **FFmpeg**  | `brew install ffmpeg`             | 1. Download [FFmpeg](https://ffmpeg.org/download.html)<br>2. Add the `bin` directory to the system PATH.       | `ffmpeg -version`     |
