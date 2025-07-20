@@ -21,12 +21,16 @@ Type the below command line into your terminal for Third-party packages installa
 | **Ghostscript** | `brew install ghostscript`    | 1. Download [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)<br>2. Run the installation program | `gs --version`        |
 
 ### CosyVoice Setup
-We strongly recommend downloading the following pretrained models and resources:
-1.CosyVoice2-0.5B - Base model (500M parameters)
-2.CosyVoice-300M - Lightweight model (300M parameters)
-3.CosyVoice-300M-SFT - Supervised Fine-Tuned version
-4.CosyVoice-300M-Instruct - Instruction-tuned version
-5.CosyVoice-ttsfrd - Text normalization resources
+We strongly recommend downloading the following pretrained models and resources: <br>
+1.CosyVoice2-0.5B - Base model (500M parameters) <br>
+2.CosyVoice-300M - Lightweight model (300M parameters) <br>
+3.CosyVoice-300M-SFT - Supervised Fine-Tuned version <br>
+4.CosyVoice-300M-Instruct - Instruction-tuned version <br>
+5.CosyVoice-ttsfrd - Text normalization resources <br>
+
+### SDK one-click download (recommended)
+```bash
+pip install modelscope
 
    
    
