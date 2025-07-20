@@ -85,10 +85,12 @@ pip install ttsfrd-0.4.2-cp310-cp310-linux_x86_64.whl
 ```
 
 ## How to Run the project?
-This is a local-based and non-database project, hence we do not need to migrate database. 
+### API KEY Initilization
+1. For the OpenAI API, the users need to replace the API_KEY and ENDPOINT in the 'generate_script' function in pre_version/myapp/utils.py.
+2. For the IFLY-TECH API, the users need to replace the APP_ID and API_SECRET in the 'generate_ppt' views in pre_version/myapp/views.py.
 
 ### Application database migration
-However, if you decide to add a database, please type the following command for each database update operation:
+This is a local-based and non-database project, hence we do not need to migrate database. However, if you decide to add a database, please type the following command for each database update operation:
 ```bash
 python manage.py migrate
 ```
@@ -103,9 +105,7 @@ python manage.py runserver 8080
 # Allow LAN access 
 python manage.py runserver 0.0.0.0:8000
 ```
-### API KEY Initilization
-1. For the OpenAI API, the users need to replace the API_KEY and ENDPOINT in the 'generate_script' function in pre_version/myapp/utils.py.
-2. For the IFLY-TECH API, the users need to replace the APP_ID and API_SECRET in the 'generate_ppt' views in pre_version/myapp/views.py.
+
 
 
 By following those step, our project should be deployed correctly on you devices and by clikcing the localhost, it will redirect to the generating teaching video & PPT pages as seen in the Project Screenshot part.
