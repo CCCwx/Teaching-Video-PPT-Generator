@@ -5,7 +5,7 @@ This project was developed by the Undergraduate in Chinese University of Hong Ko
 
 ## Project Screenshot
 ### Video Generation Part
-<img width="1054" height="947" alt="Overall Layout" src="https://github.com/user-attachments/assets/ebabc261-0a04-4580-a192-8fa227ad2c72" />
+<img width="500" height="400" alt="Overall Layout" src="https://github.com/user-attachments/assets/ebabc261-0a04-4580-a192-8fa227ad2c72" />
 
 <img width="699" height="504" alt="Voice Selection Part" src="https://github.com/user-attachments/assets/ed4991bb-af46-4493-b3fd-d5871361d83f" />
 ### PowerPoint Generation Part
