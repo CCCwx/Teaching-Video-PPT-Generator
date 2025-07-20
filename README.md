@@ -65,3 +65,21 @@ unzip -o resource.zip -d .
 pip install ttsfrd_dependency-0.1-py3-none-any.whl
 pip install ttsfrd-0.4.2-cp310-cp310-linux_x86_64.whl
 ```
+
+## How to Run the project?
+This is a local-based and non-database project, hence we do not need to migrate database. 
+
+### Application database migration
+However, if you decide to add a database, please type the following command for each database update operation:
+```bash
+python manage.py migrate
+```
+### Start the server
+# Default way (port 8000) 
+python manage.py runserver
+
+# Specify port (e.g. 8080) 
+python manage.py runserver 8080
+
+# Allow LAN access 
+python manage.py runserver 0.0.0.0:8000
