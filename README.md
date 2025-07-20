@@ -14,10 +14,10 @@ This project support Python3.7 and above, please refer to https://www.python.org
 Type the below command line into your terminal for Third-party packages installation: <br>
 <mark> pip install django==5.0.3 PyPDF2==3.0.1 python-pptx==0.6.23 gtts==2.4.0 pdf2image==1.17.0 moviepy==1.0.3 </mark>
 ### System level dependencies
-| 依赖项     | macOS 安装方法                     | Windows 安装方法                                                                 | 验证命令              |
+| 依赖项     | macOS Installation Method                | Windows Installation Method                                     | Verification Command              |
 |------------|-----------------------------------|---------------------------------------------------------------------------------|-----------------------|
-| **Poppler** | `brew install poppler`            | 1. 下载 [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)<br>2. 添加 `bin` 目录到系统 PATH | `pdftoppm -v`         |
-| **FFmpeg**  | `brew install ffmpeg`             | 1. 下载 [FFmpeg](https://ffmpeg.org/download.html)<br>2. 添加 `bin` 目录到系统 PATH       | `ffmpeg -version`     |
-| **Ghostscript** | `brew install ghostscript`    | 1. 下载 [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)<br>2. 运行安装程序 | `gs --version`        |
+| **Poppler** | `brew install poppler`            | 1. Download [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)<br>2. Add the `bin` directory to the system PATH.| `pdftoppm -v`         |
+| **FFmpeg**  | `brew install ffmpeg`             | 1. Download [FFmpeg](https://ffmpeg.org/download.html)<br>2. Add the `bin` directory to the system PATH.       | `ffmpeg -version`     |
+| **Ghostscript** | `brew install ghostscript`    | 1. Download [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)<br>2. 运行安装程序 | `gs --version`        |
    
    
