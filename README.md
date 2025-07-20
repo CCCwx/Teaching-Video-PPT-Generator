@@ -2,6 +2,20 @@ This project was developed by the Undergraduate in Chinese University of Hong Ko
 ## Main Function
 - Generate a teaching video according to the user input (Both PowerPoint Slides and PPT)
 - Generate a descriptive PowerPoints accorfing to the user input (Both PowerPoint Slides and PPT)
+
+## Project Screenshot
+### Video Generation Part
+<img width="1054" height="947" alt="Overall Layout" src="https://github.com/user-attachments/assets/ebabc261-0a04-4580-a192-8fa227ad2c72" />
+
+<img width="699" height="504" alt="Voice Selection Part" src="https://github.com/user-attachments/assets/ed4991bb-af46-4493-b3fd-d5871361d83f" />
+### PowerPoint Generation Part
+
+###  Script Modification Part
+<img width="1920" height="901" alt="Script Modification Part" src="https://github.com/user-attachments/assets/c03337d1-0117-412d-9a39-394c91b49891" />
+
+### PowerPoint Generation Part
+<img width="758" height="891" alt="PPT Generation Part" src="https://github.com/user-attachments/assets/83eaa4a0-75ff-4455-8fa2-5b10836ddd98" />
+
 ## Technology stacks and APIs
 This back-end application is developed based on Django Framework while we used JavaScript and Html to realized the front-end
 ### APIs Used
@@ -86,4 +100,9 @@ python manage.py runserver 8080
 python manage.py runserver 0.0.0.0:8000
 ```
 
-By following those step, our project should be deployed correctly on you devices and by clikcing the localhost, it will redirect to the generating teaching video & PPT pages.
+By following those step, our project should be deployed correctly on you devices and by clikcing the localhost, it will redirect to the generating teaching video & PPT pages as seen in the Project Screenshot part.
+
+
+
+
+
