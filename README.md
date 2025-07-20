@@ -18,6 +18,15 @@ Type the below command line into your terminal for Third-party packages installa
 |------------|-----------------------------------|---------------------------------------------------------------------------------|-----------------------|
 | **Poppler** | `brew install poppler`            | 1. Download [poppler-windows](https://github.com/oschwartz10612/poppler-windows/releases)<br>2. Add the `bin` directory to the system PATH.| `pdftoppm -v`         |
 | **FFmpeg**  | `brew install ffmpeg`             | 1. Download [FFmpeg](https://ffmpeg.org/download.html)<br>2. Add the `bin` directory to the system PATH.       | `ffmpeg -version`     |
-| **Ghostscript** | `brew install ghostscript`    | 1. Download [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)<br>2. 运行安装程序 | `gs --version`        |
+| **Ghostscript** | `brew install ghostscript`    | 1. Download [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)<br>2. Run the installation program | `gs --version`        |
+
+### CosyVoice Setup
+We strongly recommend downloading the following pretrained models and resources:
+1.CosyVoice2-0.5B - Base model (500M parameters)
+2.CosyVoice-300M - Lightweight model (300M parameters)
+3.CosyVoice-300M-SFT - Supervised Fine-Tuned version
+4.CosyVoice-300M-Instruct - Instruction-tuned version
+5.CosyVoice-ttsfrd - Text normalization resources
+
    
    
