@@ -1,0 +1,1 @@
+This project was developed by the Undergraduate in Chinese University of Hong Kong as his Final Year Project, aiming to developing an application which is able to help educators in teaching and learning. 
