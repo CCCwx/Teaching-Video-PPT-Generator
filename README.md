@@ -8,3 +8,4 @@ This back-end application is developed based on Django Framework while we used J
 1. OpenAI 4o-mini API: Used for generate the script in the video
 2. Alibaba CosyVoice API: Used for generate the voice in the video (Clone Voice avalable)
 3. IFLY-Teck API: Used for generate the PowerPoints
+## Project Screenshot
