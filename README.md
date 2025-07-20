@@ -75,6 +75,7 @@ However, if you decide to add a database, please type the following command for 
 python manage.py migrate
 ```
 ### Start the server
+```bash
 # Default way (port 8000) 
 python manage.py runserver
 
@@ -83,3 +84,4 @@ python manage.py runserver 8080
 
 # Allow LAN access 
 python manage.py runserver 0.0.0.0:8000
+```
