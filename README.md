@@ -94,7 +94,7 @@ This is a local-based and non-database project, hence we do not need to migrate 
 ```bash
 python manage.py migrate
 ```
-### Start the server
+### Start the Django server
 ```bash
 # Default way (port 8000) 
 python manage.py runserver
